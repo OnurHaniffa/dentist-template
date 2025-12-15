@@ -1,0 +1,220 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700&display=swap');
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/* ============================================
+   DESIGN TOKENS - "Calm Confidence" Theme
+   ============================================ */
+
+@theme {
+  /* ------------------------------------------
+     COLORS: Warm & Trustworthy Palette
+     ------------------------------------------ */
+
+  /* Primary - Warm Caramel/Amber */
+  --color-primary-50: oklch(0.98 0.01 75);
+  --color-primary-100: oklch(0.95 0.03 75);
+  --color-primary-200: oklch(0.90 0.06 70);
+  --color-primary-300: oklch(0.82 0.10 65);
+  --color-primary-400: oklch(0.72 0.13 60);
+  --color-primary-500: oklch(0.62 0.14 55);
+  --color-primary-600: oklch(0.52 0.12 50);
+  --color-primary-700: oklch(0.45 0.10 48);
+  --color-primary-800: oklch(0.38 0.08 45);
+  --color-primary-900: oklch(0.30 0.06 42);
+
+  /* Neutral - Warm Stone (not cold gray) */
+  --color-neutral-50: oklch(0.985 0.002 80);
+  --color-neutral-100: oklch(0.97 0.004 75);
+  --color-neutral-200: oklch(0.92 0.006 70);
+  --color-neutral-300: oklch(0.87 0.008 65);
+  --color-neutral-400: oklch(0.70 0.010 60);
+  --color-neutral-500: oklch(0.55 0.012 55);
+  --color-neutral-600: oklch(0.45 0.014 50);
+  --color-neutral-700: oklch(0.35 0.012 48);
+  --color-neutral-800: oklch(0.25 0.010 45);
+  --color-neutral-900: oklch(0.18 0.008 42);
+  --color-neutral-950: oklch(0.12 0.006 40);
+
+  /* Accent - Sage Green (health/calm) */
+  --color-sage-50: oklch(0.97 0.02 145);
+  --color-sage-100: oklch(0.94 0.04 145);
+  --color-sage-200: oklch(0.88 0.06 145);
+  --color-sage-300: oklch(0.78 0.08 145);
+  --color-sage-400: oklch(0.68 0.10 145);
+  --color-sage-500: oklch(0.58 0.10 145);
+  --color-sage-600: oklch(0.48 0.09 145);
+  --color-sage-700: oklch(0.40 0.08 145);
+
+  /* Accent - Sky Blue (trust/info) */
+  --color-sky-50: oklch(0.97 0.02 230);
+  --color-sky-100: oklch(0.93 0.04 230);
+  --color-sky-200: oklch(0.87 0.08 230);
+  --color-sky-300: oklch(0.78 0.12 230);
+  --color-sky-400: oklch(0.70 0.14 230);
+  --color-sky-500: oklch(0.60 0.15 230);
+  --color-sky-600: oklch(0.50 0.14 230);
+  --color-sky-700: oklch(0.42 0.12 230);
+
+  /* Semantic - Success */
+  --color-success-50: oklch(0.97 0.03 145);
+  --color-success-100: oklch(0.92 0.06 145);
+  --color-success-500: oklch(0.60 0.16 145);
+  --color-success-600: oklch(0.50 0.14 145);
+  --color-success-700: oklch(0.42 0.12 145);
+
+  /* Semantic - Error */
+  --color-error-50: oklch(0.97 0.02 25);
+  --color-error-100: oklch(0.92 0.05 25);
+  --color-error-500: oklch(0.55 0.20 25);
+  --color-error-600: oklch(0.48 0.18 25);
+  --color-error-700: oklch(0.40 0.16 25);
+
+  /* Semantic - Warning */
+  --color-warning-50: oklch(0.98 0.03 85);
+  --color-warning-100: oklch(0.94 0.08 85);
+  --color-warning-500: oklch(0.75 0.18 70);
+  --color-warning-600: oklch(0.65 0.16 65);
+
+  /* ------------------------------------------
+     TYPOGRAPHY
+     ------------------------------------------ */
+
+  /* Font Families */
+  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Font Sizes - Fluid scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  /* ------------------------------------------
+     SPACING (extending defaults)
+     ------------------------------------------ */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-30: 7.5rem;
+
+  /* ------------------------------------------
+     BORDER RADIUS
+     ------------------------------------------ */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.5rem;
+
+  /* ------------------------------------------
+     SHADOWS (Subtle, layered)
+     ------------------------------------------ */
+  --shadow-xs: 0 1px 2px 0 oklch(0 0 0 / 0.03);
+  --shadow-sm: 0 1px 3px 0 oklch(0 0 0 / 0.05), 0 1px 2px -1px oklch(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px oklch(0 0 0 / 0.06), 0 2px 4px -2px oklch(0 0 0 / 0.06);
+  --shadow-lg: 0 10px 15px -3px oklch(0 0 0 / 0.07), 0 4px 6px -4px oklch(0 0 0 / 0.07);
+  --shadow-xl: 0 20px 25px -5px oklch(0 0 0 / 0.08), 0 8px 10px -6px oklch(0 0 0 / 0.08);
+  --shadow-2xl: 0 25px 50px -12px oklch(0 0 0 / 0.15);
+
+  /* ------------------------------------------
+     ANIMATION / EASING
+     ------------------------------------------ */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ------------------------------------------
+     TRANSITIONS
+     ------------------------------------------ */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --duration-slower: 600ms;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    color: var(--color-neutral-800);
+    background-color: var(--color-neutral-50);
+  }
+
+  /* Headings use display font */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--color-neutral-900);
+  }
+
+  /* Focus styles - consistent and visible */
+  :focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Selection color */
+  ::selection {
+    background-color: var(--color-primary-200);
+    color: var(--color-neutral-900);
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+@layer utilities {
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Smooth scroll (respects reduced motion via base styles) */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  /* Hide scrollbar but allow scrolling */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Focus ring utility using our primary color */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2;
+  }
+}
