@@ -1,15 +1,137 @@
-@import 'tailwindcss';
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================
+   SHADCN-SVELTE BASE VARIABLES
+   ============================================ */
+
+:root {
+  --radius: 0.625rem;
+
+  /* Semantic colors (shadcn-svelte compatible) */
+  --background: oklch(0.985 0.002 80);
+  --foreground: oklch(0.18 0.008 42);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.008 42);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.008 42);
+  --primary: oklch(0.52 0.12 50);
+  --primary-foreground: oklch(0.98 0.01 75);
+  --secondary: oklch(0.97 0.004 75);
+  --secondary-foreground: oklch(0.18 0.008 42);
+  --muted: oklch(0.97 0.004 75);
+  --muted-foreground: oklch(0.55 0.012 55);
+  --accent: oklch(0.58 0.10 145);
+  --accent-foreground: oklch(0.98 0.01 75);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.006 70);
+  --input: oklch(0.92 0.006 70);
+  --ring: oklch(0.52 0.12 50);
+  --chart-1: oklch(0.52 0.12 50);
+  --chart-2: oklch(0.58 0.10 145);
+  --chart-3: oklch(0.60 0.15 230);
+  --chart-4: oklch(0.75 0.18 70);
+  --chart-5: oklch(0.48 0.09 145);
+  --sidebar: oklch(0.985 0.002 80);
+  --sidebar-foreground: oklch(0.18 0.008 42);
+  --sidebar-primary: oklch(0.52 0.12 50);
+  --sidebar-primary-foreground: oklch(0.98 0.01 75);
+  --sidebar-accent: oklch(0.97 0.004 75);
+  --sidebar-accent-foreground: oklch(0.18 0.008 42);
+  --sidebar-border: oklch(0.92 0.006 70);
+  --sidebar-ring: oklch(0.52 0.12 50);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.72 0.13 60);
+  --primary-foreground: oklch(0.18 0.008 42);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.68 0.10 145);
+  --accent-foreground: oklch(0.18 0.008 42);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.72 0.13 60);
+  --chart-1: oklch(0.72 0.13 60);
+  --chart-2: oklch(0.68 0.10 145);
+  --chart-3: oklch(0.70 0.14 230);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.78 0.08 145);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.72 0.13 60);
+  --sidebar-primary-foreground: oklch(0.18 0.008 42);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.72 0.13 60);
+}
 
 /* ============================================
    DESIGN TOKENS - "Calm Confidence" Theme
    ============================================ */
 
+@theme inline {
+  /* Shadcn-svelte radius tokens */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 14px);
+
+  /* Shadcn-svelte semantic color mappings */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
 @theme {
   /* ------------------------------------------
-     COLORS: Warm & Trustworthy Palette
+     CUSTOM COLOR PALETTE
      ------------------------------------------ */
 
   /* Primary - Warm Caramel/Amber */
@@ -24,7 +146,7 @@
   --color-primary-800: oklch(0.38 0.08 45);
   --color-primary-900: oklch(0.30 0.06 42);
 
-  /* Neutral - Warm Stone (not cold gray) */
+  /* Neutral - Warm Stone */
   --color-neutral-50: oklch(0.985 0.002 80);
   --color-neutral-100: oklch(0.97 0.004 75);
   --color-neutral-200: oklch(0.92 0.006 70);
@@ -37,7 +159,7 @@
   --color-neutral-900: oklch(0.18 0.008 42);
   --color-neutral-950: oklch(0.12 0.006 40);
 
-  /* Accent - Sage Green (health/calm) */
+  /* Accent - Sage Green */
   --color-sage-50: oklch(0.97 0.02 145);
   --color-sage-100: oklch(0.94 0.04 145);
   --color-sage-200: oklch(0.88 0.06 145);
@@ -47,7 +169,7 @@
   --color-sage-600: oklch(0.48 0.09 145);
   --color-sage-700: oklch(0.40 0.08 145);
 
-  /* Accent - Sky Blue (trust/info) */
+  /* Accent - Sky Blue */
   --color-sky-50: oklch(0.97 0.02 230);
   --color-sky-100: oklch(0.93 0.04 230);
   --color-sky-200: oklch(0.87 0.08 230);
@@ -80,42 +202,18 @@
   /* ------------------------------------------
      TYPOGRAPHY
      ------------------------------------------ */
-
-  /* Font Families */
   --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
-  /* Font Sizes - Fluid scale */
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 1.875rem;
-  --text-4xl: 2.25rem;
-  --text-5xl: 3rem;
-  --text-6xl: 3.75rem;
-
   /* ------------------------------------------
-     SPACING (extending defaults)
+     SPACING
      ------------------------------------------ */
   --spacing-18: 4.5rem;
   --spacing-22: 5.5rem;
   --spacing-30: 7.5rem;
 
   /* ------------------------------------------
-     BORDER RADIUS
-     ------------------------------------------ */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.25rem;
-  --radius-3xl: 1.5rem;
-
-  /* ------------------------------------------
-     SHADOWS (Subtle, layered)
+     SHADOWS
      ------------------------------------------ */
   --shadow-xs: 0 1px 2px 0 oklch(0 0 0 / 0.03);
   --shadow-sm: 0 1px 3px 0 oklch(0 0 0 / 0.05), 0 1px 2px -1px oklch(0 0 0 / 0.05);
@@ -133,9 +231,6 @@
   --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  /* ------------------------------------------
-     TRANSITIONS
-     ------------------------------------------ */
   --duration-fast: 150ms;
   --duration-normal: 250ms;
   --duration-slow: 400ms;
@@ -147,26 +242,29 @@
    ============================================ */
 
 @layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
   html {
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
   }
 
   body {
-    color: var(--color-neutral-800);
-    background-color: var(--color-neutral-50);
+    @apply bg-background text-foreground;
   }
 
   /* Headings use display font */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    color: var(--color-neutral-900);
   }
 
-  /* Focus styles - consistent and visible */
+  /* Focus styles */
   :focus-visible {
-    outline: 2px solid var(--color-primary-500);
+    outline: 2px solid var(--ring);
     outline-offset: 2px;
   }
 
@@ -184,8 +282,8 @@
 
   /* Selection color */
   ::selection {
-    background-color: var(--color-primary-200);
-    color: var(--color-neutral-900);
+    background-color: oklch(0.90 0.06 70);
+    color: oklch(0.18 0.008 42);
   }
 }
 
@@ -194,17 +292,14 @@
    ============================================ */
 
 @layer utilities {
-  /* Text balance for headings */
   .text-balance {
     text-wrap: balance;
   }
 
-  /* Smooth scroll (respects reduced motion via base styles) */
   .scroll-smooth {
     scroll-behavior: smooth;
   }
 
-  /* Hide scrollbar but allow scrolling */
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -213,8 +308,214 @@
     display: none;
   }
 
-  /* Focus ring utility using our primary color */
   .focus-ring {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+
+  /* Glassmorphism utilities */
+  .glass {
+    background: oklch(1 0 0 / 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-dark {
+    background: oklch(0.18 0.008 42 / 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Background patterns */
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(oklch(0.92 0.006 70 / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.92 0.006 70 / 0.5) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .bg-dot-pattern {
+    background-image: radial-gradient(oklch(0.87 0.008 65 / 0.8) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+
+  .bg-gradient-radial {
+    background: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.6s var(--ease-out) both;
+  }
+
+  .animate-fade-in-scale {
+    animation: fade-in-scale 0.5s var(--ease-spring) both;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* ============================================
+   ACCORDION TRANSITIONS
+   ============================================ */
+
+details.accordion-smooth > summary {
+  list-style: none;
+}
+
+details.accordion-smooth > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.accordion-smooth .accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-out;
+}
+
+details.accordion-smooth[open] .accordion-content {
+  grid-template-rows: 1fr;
+}
+
+details.accordion-smooth .accordion-content > div {
+  overflow: hidden;
+}
+
+/* ============================================
+   SCROLL-TRIGGERED ANIMATIONS
+   ============================================ */
+
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children animation */
+.scroll-fade-in.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+.scroll-fade-in.is-visible > *:nth-child(2) { transition-delay: 100ms; }
+.scroll-fade-in.is-visible > *:nth-child(3) { transition-delay: 200ms; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ============================================
+   PAGE TRANSITIONS (View Transitions API)
+   ============================================ */
+
+/* Default crossfade transition */
+::view-transition-old(root) {
+  animation: page-fade-out 200ms ease-out both;
+}
+
+::view-transition-new(root) {
+  animation: page-fade-in 300ms ease-out both;
+  animation-delay: 100ms;
+}
+
+@keyframes page-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect reduced motion for page transitions */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
   }
 }
