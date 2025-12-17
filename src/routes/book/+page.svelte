@@ -30,12 +30,12 @@
 
 	// Service options with prices
 	const serviceOptions = [
-		{ value: 'Check-up', label: 'Check-up & Exam', price: '₺1,250' },
-		{ value: 'Cleaning', label: 'Cleaning', price: '₺1,250+' },
-		{ value: 'Whitening', label: 'Teeth Whitening', price: '₺2,900+' },
-		{ value: 'Invisalign', label: 'Invisalign Consult', price: '₺1,500' },
-		{ value: 'Filling', label: 'Filling', price: '₺1,400+' },
-		{ value: 'Emergency', label: 'Emergency Visit', price: '₺1,000+' },
+		{ value: 'Check-up', label: 'Check-up & Exam', price: '₺3,500' },
+		{ value: 'Cleaning', label: 'Cleaning', price: '₺3,500+' },
+		{ value: 'Whitening', label: 'Teeth Whitening', price: '₺8,500+' },
+		{ value: 'Invisalign', label: 'Invisalign Consult', price: '₺2,500' },
+		{ value: 'Filling', label: 'Filling', price: '₺3,000+' },
+		{ value: 'Emergency', label: 'Emergency Visit', price: '₺2,500+' },
 		{ value: 'Other', label: 'Other', price: null }
 	];
 

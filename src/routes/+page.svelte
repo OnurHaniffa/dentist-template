@@ -26,12 +26,12 @@
   });
 
   const services = [
-    { name: "Check-up & cleaning", desc: "Gentle exam + cleaning with clear next steps.", meta: "30–45 min", price: "₺1,250+", icon: "sparkles" },
-    { name: "Teeth whitening", desc: "Natural brightening with sensitivity-aware options.", meta: "45–60 min", price: "₺2,900+", icon: "sun" },
-    { name: "Invisalign consult", desc: "Scan-based consult with realistic outcomes.", meta: "30 min", price: "₺1,500", icon: "cube" },
-    { name: "Fillings", desc: "Comfort-first composite fillings that look natural.", meta: "30–60 min", price: "₺1,400+", icon: "shield" },
+    { name: "Check-up & cleaning", desc: "Gentle exam + cleaning with clear next steps.", meta: "30–45 min", price: "₺3,500+", icon: "sparkles" },
+    { name: "Teeth whitening", desc: "Natural brightening with sensitivity-aware options.", meta: "45–60 min", price: "₺8,500+", icon: "sun" },
+    { name: "Invisalign consult", desc: "Scan-based consult with realistic outcomes.", meta: "30 min", price: "₺2,500", icon: "cube" },
+    { name: "Fillings", desc: "Comfort-first composite fillings that look natural.", meta: "30–60 min", price: "₺3,000+", icon: "shield" },
     { name: "Implants", desc: "Planning-led implants focused on long-term outcomes.", meta: "Case-based", price: "Consult", icon: "bolt" },
-    { name: "Emergency care", desc: "Fast relief for pain, swelling, or broken teeth.", meta: "Same-day when possible", price: "From ₺1,000", icon: "clock" }
+    { name: "Emergency care", desc: "Fast relief for pain, swelling, or broken teeth.", meta: "Same-day when possible", price: "From ₺2,500", icon: "clock" }
   ];
 
   const highlights = [
@@ -154,7 +154,7 @@
 
       <!-- Right: Bento Grid -->
       <div class="lg:col-span-6 motion-safe:animate-fade-in motion-safe:animation-delay-200">
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-2 gap-4 p-4 rounded-[2rem] bg-white/40 ring-1 ring-neutral-200/50 backdrop-blur-sm">
           <!-- Main image card - spans 2 cols -->
           <div class="col-span-2 relative group">
             <div class="rounded-3xl bg-gradient-to-br from-neutral-100 to-white p-1 shadow-2xl shadow-neutral-900/10 ring-1 ring-neutral-900/5 overflow-hidden">
@@ -198,14 +198,14 @@
           </div>
 
           <!-- Bento: Booking prompt - spans 2 cols -->
-          <div class="col-span-2 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl p-5 shadow-xl text-white">
+          <div class="col-span-2 bg-gradient-to-r from-primary-600 to-primary-500 rounded-2xl p-5 shadow-xl shadow-primary-500/25 text-white ring-1 ring-primary-400/20">
             <div class="flex items-center justify-between">
               <div>
                 <div class="font-semibold text-lg">New patient special</div>
                 <div class="text-primary-100 text-sm mt-0.5">Exam + X-rays + Cleaning</div>
               </div>
               <div class="text-right">
-                <div class="text-2xl font-display font-medium">₺1,250</div>
+                <div class="text-2xl font-display font-medium">₺3,500</div>
                 <div class="text-primary-200 text-xs">Save 30%</div>
               </div>
             </div>
@@ -257,7 +257,7 @@
 
   <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
     {#each services as s (s.name)}
-      <a href="/services" class="group relative bg-white rounded-2xl p-6 shadow-sm ring-1 ring-neutral-900/5 hover:shadow-xl hover:shadow-neutral-900/10 hover:-translate-y-1 transition-all duration-300 block">
+      <a href="/services" class="group relative bg-white rounded-2xl p-6 shadow-md ring-1 ring-neutral-900/5 hover:shadow-xl hover:shadow-neutral-900/10 hover:-translate-y-1 transition-all duration-300 block">
         <!-- Icon -->
         <div class="w-12 h-12 rounded-xl bg-primary-50 text-primary-600 grid place-items-center mb-4 group-hover:bg-primary-100 transition-colors">
           {#if s.icon === "sparkles"}
@@ -428,7 +428,7 @@
 </Section>
 
 <!-- FAQ -->
-<Section tone="surface" spacing="spacious" class="scroll-fade-in">
+<Section tone="surface" spacing="default" class="scroll-fade-in">
   <div class="grid lg:grid-cols-12 gap-12">
     <!-- Left: Header -->
     <div class="lg:col-span-4">

@@ -30,14 +30,14 @@
 	const pricing = [
 		{
 			item: 'New patient exam + x-ray consult',
-			price: '₺1,250',
+			price: '₺3,500',
 			note: 'Includes full exam and digital x-rays'
 		},
-		{ item: 'Check-up & cleaning', price: '₺1,250+', note: 'Routine preventive care' },
-		{ item: 'Teeth whitening', price: '₺2,900+', note: 'Professional in-office treatment' },
-		{ item: 'Filling (composite)', price: '₺1,400+', note: 'Natural-looking tooth-colored' },
-		{ item: 'Invisalign consult', price: '₺1,500', note: 'Scan + treatment preview' },
-		{ item: 'Emergency consult', price: '₺1,000+', note: 'Same-day when possible' }
+		{ item: 'Check-up & cleaning', price: '₺3,500+', note: 'Routine preventive care' },
+		{ item: 'Teeth whitening', price: '₺8,500+', note: 'Professional in-office treatment' },
+		{ item: 'Filling (composite)', price: '₺3,000+', note: 'Natural-looking tooth-colored' },
+		{ item: 'Invisalign consult', price: '₺2,500', note: 'Scan + treatment preview' },
+		{ item: 'Emergency consult', price: '₺2,500+', note: 'Same-day when possible' }
 	];
 
 	const paymentFeatures = [
@@ -54,14 +54,14 @@
 			options: [
 				{
 					name: 'Invisalign',
-					price: '₺25,000+',
+					price: '₺95,000+',
 					pros: ['Nearly invisible', 'Removable for eating', 'Comfortable'],
 					cons: ['Requires discipline', 'Not for severe cases'],
 					best: 'Adults who want discreet treatment'
 				},
 				{
 					name: 'Traditional Braces',
-					price: '₺15,000+',
+					price: '₺55,000+',
 					pros: ['Effective for complex cases', 'No compliance needed', 'Lower cost'],
 					cons: ['Visible metal', 'Food restrictions'],
 					best: 'Complex alignment issues'
@@ -73,14 +73,14 @@
 			options: [
 				{
 					name: 'In-Office Whitening',
-					price: '₺2,900+',
+					price: '₺8,500+',
 					pros: ['Immediate results', 'Professional strength', 'Single visit'],
 					cons: ['Higher cost', 'May cause sensitivity'],
 					best: 'Quick, dramatic results'
 				},
 				{
 					name: 'Take-Home Kit',
-					price: '₺1,800+',
+					price: '₺4,500+',
 					pros: ['Gradual results', 'Use at your pace', 'Touch-ups easy'],
 					cons: ['Takes 1-2 weeks', 'Requires daily use'],
 					best: 'Budget-conscious, gradual improvement'

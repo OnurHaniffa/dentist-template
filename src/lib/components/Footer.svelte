@@ -43,7 +43,7 @@
   </div>
 
   <!-- Main footer content -->
-  <div class="bg-neutral-900 text-white">
+  <div class="bg-gradient-to-b from-neutral-900 via-neutral-900 to-neutral-950 text-white">
     <!-- Newsletter row -->
     <Container class="py-10 border-b border-neutral-800">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -51,16 +51,18 @@
           <h4 class="text-lg font-semibold text-white">Get dental tips & updates</h4>
           <p class="text-sm text-neutral-400 mt-1">Simple advice for a healthier smile. No spam, unsubscribe anytime.</p>
         </div>
-        <form class="flex w-full md:w-auto gap-3" onsubmit={(e) => e.preventDefault()}>
-          <input
-            type="email"
-            placeholder="Your email address"
-            class="flex-1 md:w-64 px-4 py-3 rounded-full bg-neutral-800 border border-neutral-700 text-white placeholder-neutral-500 focus:ring-2 focus:ring-primary-500 focus:border-transparent focus:outline-none"
-            required
-          />
+        <form class="flex w-full md:w-auto gap-2" onsubmit={(e) => e.preventDefault()}>
+          <div class="relative flex-1 md:w-72">
+            <input
+              type="email"
+              placeholder="Your email address"
+              class="w-full px-5 py-3.5 rounded-xl bg-neutral-800/80 border border-neutral-700/50 text-white placeholder-neutral-500 focus:ring-2 focus:ring-primary-500 focus:border-primary-500/50 focus:bg-neutral-800 focus:outline-none transition-all duration-200"
+              required
+            />
+          </div>
           <button
             type="submit"
-            class="px-6 py-3 rounded-full bg-primary-600 text-white font-semibold hover:bg-primary-500 transition-colors"
+            class="px-6 py-3.5 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-500 hover:shadow-lg hover:shadow-primary-600/25 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
           >
             Subscribe
           </button>
@@ -93,10 +95,10 @@
         </p>
 
         <!-- Social icons -->
-        <div class="mt-6 flex items-center gap-3">
+        <div class="mt-6 flex items-center gap-2">
           <a
             href="/contact"
-            class="h-10 w-10 rounded-full bg-neutral-800 grid place-items-center text-neutral-400 hover:bg-neutral-700 hover:text-white transition-colors duration-200"
+            class="h-10 w-10 rounded-xl bg-neutral-800/80 grid place-items-center text-neutral-400 hover:bg-primary-600 hover:text-white hover:shadow-lg hover:shadow-primary-600/25 hover:-translate-y-0.5 transition-all duration-200"
             aria-label="Follow us on Instagram"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -105,7 +107,7 @@
           </a>
           <a
             href="/contact"
-            class="h-10 w-10 rounded-full bg-neutral-800 grid place-items-center text-neutral-400 hover:bg-neutral-700 hover:text-white transition-colors duration-200"
+            class="h-10 w-10 rounded-xl bg-neutral-800/80 grid place-items-center text-neutral-400 hover:bg-primary-600 hover:text-white hover:shadow-lg hover:shadow-primary-600/25 hover:-translate-y-0.5 transition-all duration-200"
             aria-label="Follow us on Facebook"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -114,7 +116,7 @@
           </a>
           <a
             href="/contact"
-            class="h-10 w-10 rounded-full bg-neutral-800 grid place-items-center text-neutral-400 hover:bg-neutral-700 hover:text-white transition-colors duration-200"
+            class="h-10 w-10 rounded-xl bg-neutral-800/80 grid place-items-center text-neutral-400 hover:bg-primary-600 hover:text-white hover:shadow-lg hover:shadow-primary-600/25 hover:-translate-y-0.5 transition-all duration-200"
             aria-label="Follow us on LinkedIn"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

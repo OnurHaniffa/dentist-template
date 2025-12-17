@@ -116,7 +116,7 @@
 					class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-neutral-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-neutral-900/10"
 				>
 					<!-- Photo -->
-					<div class="aspect-[4/3] overflow-hidden bg-neutral-100">
+					<div class="aspect-[3/4] overflow-hidden bg-neutral-100">
 						<img
 							src={p.image}
 							alt={p.name}

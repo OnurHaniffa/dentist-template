@@ -46,7 +46,7 @@
       desc: "A thorough exam and professional cleaning with honest guidance — no pressure, just clear advice about your oral health.",
       duration: "30–45 min",
       category: "preventive",
-      price: "₺1,250+",
+      price: "₺3,500+",
       icon: "search",
       includes: ["Full oral examination", "Professional scaling & polish", "Oral hygiene guidance", "Treatment plan if needed"],
       idealFor: "Everyone — recommended every 6 months"
@@ -56,7 +56,7 @@
       desc: "Professional brightening tailored to your sensitivity level. Natural-looking results you'll actually feel confident about.",
       duration: "45–60 min",
       category: "cosmetic",
-      price: "₺2,900+",
+      price: "₺8,500+",
       icon: "sparkles",
       includes: ["Shade assessment", "Gum protection", "Professional whitening", "Aftercare kit"],
       idealFor: "Those wanting a brighter, confident smile"
@@ -66,7 +66,7 @@
       desc: "Clear aligners that straighten your teeth discreetly. We'll show you a 3D preview of your smile transformation.",
       duration: "6–18 months",
       category: "cosmetic",
-      price: "From ₺45,000",
+      price: "From ₺95,000",
       icon: "smile",
       includes: ["3D digital scan", "Custom aligner sets", "Progress check-ins", "Retainers included"],
       idealFor: "Adults & teens wanting discreet alignment"
@@ -76,7 +76,7 @@
       desc: "Tooth-colored composite fillings that preserve healthy structure and blend seamlessly with your natural teeth.",
       duration: "30–60 min",
       category: "restorative",
-      price: "₺1,400+",
+      price: "₺3,000+",
       icon: "shield",
       includes: ["Local anesthesia", "Decay removal", "Composite restoration", "Bite adjustment"],
       idealFor: "Cavities or replacing old metal fillings"
@@ -86,7 +86,7 @@
       desc: "Permanent tooth replacement with meticulous planning. A long-term solution that looks and functions like natural teeth.",
       duration: "3–6 months total",
       category: "surgical",
-      price: "From ₺18,000",
+      price: "From ₺45,000",
       icon: "cog",
       includes: ["3D CT scan & planning", "Surgical placement", "Healing period", "Custom ceramic crown"],
       idealFor: "Missing teeth — single or multiple"
@@ -96,7 +96,7 @@
       desc: "Fast relief when you need it most. Same-day appointments for pain, swelling, broken teeth, or urgent concerns.",
       duration: "Same-day",
       category: "surgical",
-      price: "From ₺1,000",
+      price: "From ₺2,500",
       icon: "alert",
       includes: ["Priority scheduling", "Pain management", "Diagnostic X-rays", "Immediate treatment"],
       idealFor: "Dental emergencies & severe pain"
@@ -195,10 +195,11 @@
       {#each filteredServices as service (service.name)}
         {@const isExpanded = expandedService === service.name}
         <article
-          class="group rounded-2xl bg-white shadow-sm ring-1 ring-neutral-900/5 overflow-hidden transition-all duration-300 {
-            isExpanded ? 'ring-2 ring-primary-500 shadow-lg' : 'hover:shadow-xl hover:shadow-neutral-900/10 hover:-translate-y-1'
+          class="group relative rounded-2xl bg-gradient-to-b from-neutral-100 to-white p-[1px] shadow-md transition-all duration-300 {
+            isExpanded ? 'ring-2 ring-primary-500 shadow-lg' : 'hover:shadow-xl hover:shadow-neutral-900/10 hover:-translate-y-1 hover:from-primary-100'
           }"
         >
+        <div class="rounded-2xl bg-white overflow-hidden h-full">
           <div class="p-6 sm:p-8">
             <!-- Header -->
             <div class="flex items-start gap-4">
@@ -304,6 +305,7 @@
               </div>
             {/if}
           </div>
+        </div>
         </article>
       {/each}
     </div>
