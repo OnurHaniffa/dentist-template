@@ -4,6 +4,7 @@
 	import PageHeader from '$lib/components/PageHeader.svelte';
 	import Section from '$lib/components/Section.svelte';
 	import Button from '$lib/ui/Button.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 
 	// Scroll animation observer
 	$effect(() => {
@@ -123,13 +124,11 @@
 	};
 </script>
 
-<svelte:head>
-	<title>Reviews — Pearl Dental Studio</title>
-	<meta
-		name="description"
-		content="Read patient reviews and see why people choose our clinic for calm, modern dental care in Istanbul."
-	/>
-</svelte:head>
+<SEO
+	title="Patient Reviews"
+	description="Read reviews from our patients. See why people choose Pearl Dental Studio for gentle, modern dental care in Istanbul."
+	canonical="/reviews"
+/>
 
 <PageShell>
 	<!-- Header Section -->
@@ -141,7 +140,7 @@
 		>
 			<div class="mt-4 flex items-center gap-4">
 				<div class="flex items-center gap-1">
-					{#each Array(5) as _}
+					{#each Array(5) as _, i (i)}
 						<svg class="h-5 w-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
 							<path
 								d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
@@ -160,11 +159,11 @@
 		<div class="grid gap-6 lg:grid-cols-3">
 			<!-- Overall Rating -->
 			<div
-				class="flex flex-col items-center justify-center rounded-2xl bg-white p-8 shadow-sm ring-1 ring-neutral-900/5 text-center"
+				class="flex flex-col items-center justify-center rounded-2xl bg-white p-8 text-center shadow-sm ring-1 ring-neutral-900/5"
 			>
-				<div class="text-6xl font-display font-bold text-neutral-900">{stats.rating}</div>
+				<div class="font-display text-6xl font-bold text-neutral-900">{stats.rating}</div>
 				<div class="mt-2 flex items-center gap-1">
-					{#each Array(5) as _}
+					{#each Array(5) as _, i (i)}
 						<svg class="h-5 w-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
 							<path
 								d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
@@ -182,7 +181,7 @@
 					{#each stats.breakdown as row (row.stars)}
 						<div class="flex items-center gap-3">
 							<span class="w-12 text-sm text-neutral-600">{row.stars} star</span>
-							<div class="flex-1 h-3 rounded-full bg-neutral-100 overflow-hidden">
+							<div class="h-3 flex-1 overflow-hidden rounded-full bg-neutral-100">
 								<div
 									class="h-full rounded-full bg-primary-500 transition-all duration-500"
 									style="width: {row.percent}%"
@@ -192,12 +191,12 @@
 						</div>
 					{/each}
 				</div>
-				<div class="mt-6 pt-4 border-t border-neutral-100">
+				<div class="mt-6 border-t border-neutral-100 pt-4">
 					<a
 						href="https://g.page/r/your-google-review-link"
 						target="_blank"
 						rel="noreferrer"
-						class="inline-flex items-center gap-2 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
+						class="inline-flex items-center gap-2 text-sm font-medium text-primary-600 transition-colors hover:text-primary-700"
 					>
 						<svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
 							<path
@@ -214,8 +213,18 @@
 							/>
 						</svg>
 						Leave a review on Google
-						<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+						<svg
+							class="h-4 w-4"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+							stroke-width="2"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+							/>
 						</svg>
 					</a>
 				</div>
@@ -249,7 +258,7 @@
 				>
 					<!-- Quote icon -->
 					<svg
-						class="absolute right-6 top-6 h-8 w-8 text-primary-100"
+						class="absolute top-6 right-6 h-8 w-8 text-primary-100"
 						fill="currentColor"
 						viewBox="0 0 24 24"
 						aria-hidden="true"
@@ -261,7 +270,7 @@
 
 					<!-- Stars -->
 					<div class="mb-3 flex items-center gap-1">
-						{#each Array(r.rating) as _}
+						{#each Array(r.rating) as _, i (i)}
 							<svg class="h-4 w-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
 								<path
 									d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
@@ -274,8 +283,10 @@
 					<p class="relative z-10 leading-relaxed text-neutral-700">"{r.text}"</p>
 
 					<!-- Tag -->
-					<span class="mt-4 inline-block rounded-full px-2.5 py-1 text-xs font-medium {tagColors[r.tag]}"
-						>{r.tag}</span
+					<span
+						class="mt-4 inline-block rounded-full px-2.5 py-1 text-xs font-medium {tagColors[
+							r.tag
+						]}">{r.tag}</span
 					>
 
 					<!-- Author -->
@@ -284,8 +295,11 @@
 							<img
 								src={r.avatar}
 								alt=""
+								width="40"
+								height="40"
 								class="h-10 w-10 rounded-full object-cover ring-2 ring-neutral-100"
 								loading="lazy"
+								decoding="async"
 							/>
 						{:else}
 							<div
@@ -295,7 +309,7 @@
 							</div>
 						{/if}
 						<div>
-							<cite class="not-italic font-semibold text-neutral-900">{r.name}</cite>
+							<cite class="font-semibold text-neutral-900 not-italic">{r.name}</cite>
 							<p class="text-xs text-neutral-500">{r.date}</p>
 						</div>
 					</footer>
@@ -347,8 +361,11 @@
 			<img
 				src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1600&h=600&fit=crop&q=80"
 				alt=""
+				width="1600"
+				height="600"
 				class="h-full w-full object-cover"
 				loading="lazy"
+				decoding="async"
 			/>
 			<div class="absolute inset-0 bg-neutral-900/80"></div>
 		</div>

@@ -4,6 +4,7 @@
 	import PageHeader from '$lib/components/PageHeader.svelte';
 	import Section from '$lib/components/Section.svelte';
 	import Button from '$lib/ui/Button.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 
 	// Scroll animation observer
 	$effect(() => {
@@ -73,13 +74,11 @@
 	];
 </script>
 
-<svelte:head>
-	<title>Team — Pearl Dental Studio</title>
-	<meta
-		name="description"
-		content="Meet our dentists and staff. Learn about our approach to calm, modern dental care in Istanbul."
-	/>
-</svelte:head>
+<SEO
+	title="Our Team"
+	description="Meet our experienced dentists and staff at Pearl Dental Studio Istanbul. Friendly, qualified professionals committed to your comfort."
+	canonical="/team"
+/>
 
 <PageShell>
 	<!-- Header Section -->
@@ -100,7 +99,7 @@
 	<Section tone="surface" spacing="spacious" class="scroll-fade-in">
 		<div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
 			<div>
-				<p class="mb-2 text-sm font-medium uppercase tracking-wider text-primary-600">Our Team</p>
+				<p class="mb-2 text-sm font-medium tracking-wider text-primary-600 uppercase">Our Team</p>
 				<h2 class="font-display text-2xl tracking-tight text-neutral-900 sm:text-3xl">
 					Experienced professionals
 				</h2>
@@ -120,14 +119,17 @@
 						<img
 							src={p.image}
 							alt={p.name}
+							width="400"
+							height="533"
 							class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
 							loading="lazy"
+							decoding="async"
 						/>
 					</div>
 
 					<!-- Content -->
 					<div class="p-6">
-						<div class="mb-1 text-xs font-medium uppercase tracking-wider text-primary-600">
+						<div class="mb-1 text-xs font-medium tracking-wider text-primary-600 uppercase">
 							{p.specialty}
 						</div>
 						<h3 class="text-lg font-semibold text-neutral-900">{p.name}</h3>
@@ -164,16 +166,21 @@
 
 	<!-- Our Story -->
 	<Section tone="muted" spacing="default" class="scroll-fade-in">
-		<div class="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
+		<div class="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
 			<!-- Image -->
-			<div class="relative rounded-2xl overflow-hidden">
+			<div class="relative overflow-hidden rounded-2xl">
 				<img
 					src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&h=600&fit=crop&q=80"
 					alt="Pearl Dental Studio interior"
-					class="w-full h-full object-cover aspect-[4/3]"
+					width="800"
+					height="600"
+					class="aspect-[4/3] h-full w-full object-cover"
 					loading="lazy"
+					decoding="async"
 				/>
-				<div class="absolute bottom-4 left-4 rounded-xl bg-white/95 backdrop-blur-sm px-4 py-3 shadow-lg">
+				<div
+					class="absolute bottom-4 left-4 rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm"
+				>
 					<p class="text-sm font-semibold text-neutral-900">Est. 2015</p>
 					<p class="text-xs text-neutral-500">Kadıköy, Istanbul</p>
 				</div>
@@ -181,40 +188,40 @@
 
 			<!-- Story Content -->
 			<div>
-				<p class="mb-2 text-sm font-medium uppercase tracking-wider text-primary-600">Our Story</p>
+				<p class="mb-2 text-sm font-medium tracking-wider text-primary-600 uppercase">Our Story</p>
 				<h2 class="font-display text-2xl tracking-tight text-neutral-900 sm:text-3xl">
 					Built on a simple idea
 				</h2>
 				<div class="mt-6 space-y-4 text-neutral-600">
 					<p>
 						Pearl Dental Studio was founded in 2015 with a simple mission: make dental care
-						comfortable, honest, and modern. Dr. Aylin Kaya, frustrated by the rushed,
-						impersonal experiences she saw patients endure, set out to build something different.
+						comfortable, honest, and modern. Dr. Aylin Kaya, frustrated by the rushed, impersonal
+						experiences she saw patients endure, set out to build something different.
 					</p>
 					<p>
-						Today, we've grown to a team of three dedicated professionals, but our approach
-						remains the same. We take time to listen, explain every option clearly, and never
-						pressure you into decisions.
+						Today, we've grown to a team of three dedicated professionals, but our approach remains
+						the same. We take time to listen, explain every option clearly, and never pressure you
+						into decisions.
 					</p>
 					<p>
-						Our clinic combines modern technology with a calm, welcoming environment. From
-						digital x-rays to 3D treatment previews, we use the latest tools — not to impress,
-						but to give you better care and clearer understanding of your treatment.
+						Our clinic combines modern technology with a calm, welcoming environment. From digital
+						x-rays to 3D treatment previews, we use the latest tools — not to impress, but to give
+						you better care and clearer understanding of your treatment.
 					</p>
 				</div>
 
 				<!-- Stats -->
 				<div class="mt-8 grid grid-cols-3 gap-4">
 					<div class="text-center">
-						<div class="text-2xl font-display font-bold text-neutral-900">10+</div>
+						<div class="font-display text-2xl font-bold text-neutral-900">10+</div>
 						<div class="text-xs text-neutral-500">Years serving patients</div>
 					</div>
 					<div class="text-center">
-						<div class="text-2xl font-display font-bold text-neutral-900">5,000+</div>
+						<div class="font-display text-2xl font-bold text-neutral-900">5,000+</div>
 						<div class="text-xs text-neutral-500">Happy patients</div>
 					</div>
 					<div class="text-center">
-						<div class="text-2xl font-display font-bold text-neutral-900">4.9</div>
+						<div class="font-display text-2xl font-bold text-neutral-900">4.9</div>
 						<div class="text-xs text-neutral-500">Google rating</div>
 					</div>
 				</div>
@@ -225,7 +232,7 @@
 	<!-- Our Values -->
 	<Section tone="surface" spacing="default" class="scroll-fade-in">
 		<div class="text-center">
-			<p class="mb-2 text-sm font-medium uppercase tracking-wider text-primary-600">Our Values</p>
+			<p class="mb-2 text-sm font-medium tracking-wider text-primary-600 uppercase">Our Values</p>
 			<h2 class="font-display text-2xl tracking-tight text-neutral-900 sm:text-3xl">
 				What guides our care
 			</h2>
@@ -233,9 +240,9 @@
 
 		<div class="mt-10 grid gap-6 sm:grid-cols-3">
 			{#each values as v, i (v.title)}
-				<div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-neutral-900/5 text-center">
+				<div class="rounded-2xl bg-white p-6 text-center shadow-sm ring-1 ring-neutral-900/5">
 					<div
-						class="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-xl bg-neutral-900 text-white text-lg font-display"
+						class="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-xl bg-neutral-900 font-display text-lg text-white"
 					>
 						0{i + 1}
 					</div>
@@ -252,8 +259,11 @@
 			<img
 				src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1600&h=600&fit=crop&q=80"
 				alt=""
+				width="1600"
+				height="600"
 				class="h-full w-full object-cover"
 				loading="lazy"
+				decoding="async"
 			/>
 			<div class="absolute inset-0 bg-neutral-900/80"></div>
 		</div>

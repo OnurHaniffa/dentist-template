@@ -4,6 +4,7 @@
 	import PageHeader from '$lib/components/PageHeader.svelte';
 	import Section from '$lib/components/Section.svelte';
 	import Button from '$lib/ui/Button.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 
 	// Scroll animation observer
 	$effect(() => {
@@ -90,13 +91,11 @@
 	];
 </script>
 
-<svelte:head>
-	<title>Pricing — Pearl Dental Studio</title>
-	<meta
-		name="description"
-		content="Transparent pricing guidance, insurance information, and payment options for common dental treatments."
-	/>
-</svelte:head>
+<SEO
+	title="Pricing & Fees"
+	description="Transparent dental pricing in Istanbul. See costs for check-ups, whitening, fillings, implants & more. Payment plans available."
+	canonical="/pricing"
+/>
 
 <PageShell>
 	<!-- Header Section -->
@@ -117,7 +116,7 @@
 	<Section tone="surface" spacing="spacious" class="scroll-fade-in">
 		<div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
 			<div>
-				<p class="mb-2 text-sm font-medium uppercase tracking-wider text-primary-600">
+				<p class="mb-2 text-sm font-medium tracking-wider text-primary-600 uppercase">
 					Treatment Costs
 				</p>
 				<h2 class="font-display text-2xl tracking-tight text-neutral-900 sm:text-3xl">
@@ -132,7 +131,7 @@
 		<div class="grid gap-6 lg:grid-cols-3">
 			<!-- Pricing List -->
 			<div
-				class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-neutral-900/5 lg:col-span-2 sm:p-8"
+				class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-neutral-900/5 sm:p-8 lg:col-span-2"
 			>
 				<div class="divide-y divide-neutral-100">
 					{#each pricing as row (row.item)}
@@ -149,8 +148,8 @@
 				</div>
 
 				<p class="mt-6 rounded-xl bg-neutral-50 p-4 text-sm text-neutral-600">
-					<strong class="text-neutral-900">Note:</strong> These are starting prices. We'll provide a
-					detailed quote after your consultation with all options explained.
+					<strong class="text-neutral-900">Note:</strong> These are starting prices. We'll provide a detailed
+					quote after your consultation with all options explained.
 				</p>
 			</div>
 
@@ -202,14 +201,14 @@
 
 	<!-- Treatment Comparison Section -->
 	<Section tone="muted" spacing="default" class="scroll-fade-in">
-		<div class="text-center mb-10">
-			<p class="mb-2 text-sm font-medium uppercase tracking-wider text-primary-600">
+		<div class="mb-10 text-center">
+			<p class="mb-2 text-sm font-medium tracking-wider text-primary-600 uppercase">
 				Compare Options
 			</p>
 			<h2 class="font-display text-2xl tracking-tight text-neutral-900 sm:text-3xl">
 				Treatment comparisons
 			</h2>
-			<p class="mt-2 mx-auto max-w-2xl text-neutral-600">
+			<p class="mx-auto mt-2 max-w-2xl text-neutral-600">
 				Not sure which option is right for you? Here's a side-by-side comparison to help you decide.
 			</p>
 		</div>
@@ -221,18 +220,26 @@
 					<div class="grid gap-6 md:grid-cols-2">
 						{#each comparison.options as opt (opt.name)}
 							<div class="rounded-xl bg-neutral-50 p-5">
-								<div class="flex items-center justify-between mb-4">
+								<div class="mb-4 flex items-center justify-between">
 									<h4 class="font-semibold text-neutral-900">{opt.name}</h4>
 									<span class="text-lg font-bold text-primary-600">{opt.price}</span>
 								</div>
 
 								<!-- Pros -->
 								<div class="mb-3">
-									<p class="text-xs font-medium uppercase tracking-wider text-sage-600 mb-2">Pros</p>
+									<p class="mb-2 text-xs font-medium tracking-wider text-sage-600 uppercase">
+										Pros
+									</p>
 									<ul class="space-y-1">
 										{#each opt.pros as pro (pro)}
 											<li class="flex items-center gap-2 text-sm text-neutral-600">
-												<svg class="h-4 w-4 text-sage-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+												<svg
+													class="h-4 w-4 shrink-0 text-sage-500"
+													fill="none"
+													viewBox="0 0 24 24"
+													stroke="currentColor"
+													stroke-width="2"
+												>
 													<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
 												</svg>
 												{pro}
@@ -243,12 +250,22 @@
 
 								<!-- Cons -->
 								<div class="mb-4">
-									<p class="text-xs font-medium uppercase tracking-wider text-red-500 mb-2">Cons</p>
+									<p class="mb-2 text-xs font-medium tracking-wider text-red-500 uppercase">Cons</p>
 									<ul class="space-y-1">
 										{#each opt.cons as con (con)}
 											<li class="flex items-center gap-2 text-sm text-neutral-600">
-												<svg class="h-4 w-4 text-red-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-													<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+												<svg
+													class="h-4 w-4 shrink-0 text-red-400"
+													fill="none"
+													viewBox="0 0 24 24"
+													stroke="currentColor"
+													stroke-width="2"
+												>
+													<path
+														stroke-linecap="round"
+														stroke-linejoin="round"
+														d="M6 18L18 6M6 6l12 12"
+													/>
 												</svg>
 												{con}
 											</li>
@@ -257,8 +274,10 @@
 								</div>
 
 								<!-- Best for -->
-								<div class="pt-3 border-t border-neutral-200">
-									<p class="text-xs font-medium uppercase tracking-wider text-neutral-500 mb-1">Best for</p>
+								<div class="border-t border-neutral-200 pt-3">
+									<p class="mb-1 text-xs font-medium tracking-wider text-neutral-500 uppercase">
+										Best for
+									</p>
 									<p class="text-sm font-medium text-neutral-900">{opt.best}</p>
 								</div>
 							</div>
@@ -269,7 +288,9 @@
 		</div>
 
 		<div class="mt-8 text-center">
-			<p class="text-sm text-neutral-500 mb-4">Still unsure? We'll help you choose during your consultation.</p>
+			<p class="mb-4 text-sm text-neutral-500">
+				Still unsure? We'll help you choose during your consultation.
+			</p>
 			<Button href="/book" variant="primary">Book free consultation</Button>
 		</div>
 	</Section>
@@ -317,8 +338,11 @@
 			<img
 				src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&h=600&fit=crop&q=80"
 				alt=""
+				width="1600"
+				height="600"
 				class="h-full w-full object-cover"
 				loading="lazy"
+				decoding="async"
 			/>
 			<div class="absolute inset-0 bg-neutral-900/80"></div>
 		</div>

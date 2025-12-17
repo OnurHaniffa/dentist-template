@@ -5,6 +5,7 @@
 	import Section from '$lib/components/Section.svelte';
 	import Button from '$lib/ui/Button.svelte';
 	import { site } from '$lib/content/site';
+	import SEO from '$lib/components/SEO.svelte';
 
 	// Scroll animation observer
 	$effect(() => {
@@ -82,13 +83,11 @@
 	];
 </script>
 
-<svelte:head>
-	<title>Book appointment — Pearl Dental Studio</title>
-	<meta
-		name="description"
-		content="Request a dental appointment online. We'll confirm by phone or email within 24 hours."
-	/>
-</svelte:head>
+<SEO
+	title="Book Appointment"
+	description="Book a dental appointment at Pearl Dental Studio Istanbul. Request online and we'll confirm within 24 hours."
+	canonical="/book"
+/>
 
 <PageShell>
 	<!-- Header Section -->
@@ -112,8 +111,18 @@
 					<div
 						class="mb-6 flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700"
 					>
-						<svg class="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+						<svg
+							class="h-5 w-5 shrink-0"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+							stroke-width="2"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+							/>
 						</svg>
 						{error}
 					</div>
@@ -121,10 +130,20 @@
 
 				{#if success}
 					<div
-						class="mb-6 flex items-start gap-3 rounded-xl border border-sage-200 bg-sage-50 p-4 text-sm text-sage-800"
+						class="text-sage-800 mb-6 flex items-start gap-3 rounded-xl border border-sage-200 bg-sage-50 p-4 text-sm"
 					>
-						<svg class="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+						<svg
+							class="h-5 w-5 shrink-0"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+							stroke-width="2"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+							/>
 						</svg>
 						<div>
 							<strong>Request received!</strong> We'll contact you shortly to confirm your appointment.
@@ -141,7 +160,7 @@
 						<input
 							id="name"
 							type="text"
-							class="h-12 rounded-xl border border-neutral-200 bg-white px-4 text-sm outline-none transition-all focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+							class="h-12 rounded-xl border border-neutral-200 bg-white px-4 text-sm transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
 							placeholder="Your name"
 							bind:value={name}
 							disabled={success}
@@ -156,7 +175,7 @@
 						<input
 							id="phone"
 							type="tel"
-							class="h-12 rounded-xl border border-neutral-200 bg-white px-4 text-sm outline-none transition-all focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+							class="h-12 rounded-xl border border-neutral-200 bg-white px-4 text-sm transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
 							placeholder="+90 555 123 4567"
 							bind:value={phone}
 							disabled={success}
@@ -166,12 +185,12 @@
 					<!-- Email -->
 					<div class="grid gap-2 sm:col-span-2">
 						<label class="text-sm font-medium text-neutral-900" for="email">
-							Email <span class="text-neutral-400">(optional)</span>
+							Email <span class="text-neutral-500">(optional)</span>
 						</label>
 						<input
 							id="email"
 							type="email"
-							class="h-12 rounded-xl border border-neutral-200 bg-white px-4 text-sm outline-none transition-all focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+							class="h-12 rounded-xl border border-neutral-200 bg-white px-4 text-sm transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
 							placeholder="you@example.com"
 							bind:value={email}
 							disabled={success}
@@ -180,10 +199,11 @@
 
 					<!-- Reason -->
 					<div class="grid gap-2 sm:col-span-2">
-						<label class="text-sm font-medium text-neutral-900" for="reason">Reason for visit</label>
+						<label class="text-sm font-medium text-neutral-900" for="reason">Reason for visit</label
+						>
 						<select
 							id="reason"
-							class="h-12 rounded-xl border border-neutral-200 bg-white px-4 text-sm outline-none transition-all focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+							class="h-12 rounded-xl border border-neutral-200 bg-white px-4 text-sm transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
 							bind:value={reason}
 							disabled={success}
 						>
@@ -195,8 +215,18 @@
 						</select>
 						{#if selectedService?.price}
 							<div class="flex items-center gap-2 rounded-lg bg-primary-50 px-3 py-2 text-sm">
-								<svg class="h-4 w-4 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-									<path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+								<svg
+									class="h-4 w-4 text-primary-600"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke="currentColor"
+									stroke-width="2"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+									/>
 								</svg>
 								<span class="text-neutral-600">
 									Starting from <strong class="text-primary-700">{selectedService.price}</strong>
@@ -209,11 +239,11 @@
 					<!-- Message -->
 					<div class="grid gap-2 sm:col-span-2">
 						<label class="text-sm font-medium text-neutral-900" for="message">
-							Additional notes <span class="text-neutral-400">(optional)</span>
+							Additional notes <span class="text-neutral-500">(optional)</span>
 						</label>
 						<textarea
 							id="message"
-							class="min-h-28 rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+							class="min-h-28 rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
 							placeholder="Any specific concerns or preferred times?"
 							bind:value={message}
 							disabled={success}
@@ -222,7 +252,7 @@
 
 					<!-- Consent -->
 					<label
-						class="sm:col-span-2 flex items-start gap-3 rounded-xl bg-neutral-50 p-4 text-sm text-neutral-600 cursor-pointer hover:bg-neutral-100 transition-colors"
+						class="flex cursor-pointer items-start gap-3 rounded-xl bg-neutral-50 p-4 text-sm text-neutral-600 transition-colors hover:bg-neutral-100 sm:col-span-2"
 					>
 						<input
 							type="checkbox"
@@ -231,18 +261,24 @@
 							disabled={success}
 						/>
 						<span>
-							I consent to being contacted about this appointment request. <span class="text-red-500">*</span>
+							I consent to being contacted about this appointment request. <span
+								class="text-red-500">*</span
+							>
 						</span>
 					</label>
 
 					<!-- Buttons -->
-					<div class="sm:col-span-2 flex flex-wrap items-center gap-3 pt-2">
-						<Button type="submit" variant="primary" size="lg" {loading} disabled={success || loading}>
+					<div class="flex flex-wrap items-center gap-3 pt-2 sm:col-span-2">
+						<Button
+							type="submit"
+							variant="primary"
+							size="lg"
+							{loading}
+							disabled={success || loading}
+						>
 							{success ? 'Request sent' : 'Send request'}
 						</Button>
-						<Button href={'tel:' + site.phone} variant="outline" size="lg">
-							Call instead
-						</Button>
+						<Button href={'tel:' + site.phone} variant="outline" size="lg">Call instead</Button>
 					</div>
 				</div>
 			</form>

@@ -1,11 +1,13 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
+
 	type Breadcrumb = { label: string; href?: string };
 
 	let { title, subtitle, breadcrumbs, children } = $props<{
 		title: string;
 		subtitle?: string;
 		breadcrumbs?: Breadcrumb[];
-		children?: any;
+		children?: Snippet;
 	}>();
 </script>
 

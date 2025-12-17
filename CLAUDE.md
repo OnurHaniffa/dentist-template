@@ -27,6 +27,7 @@ This is a SvelteKit 2 dental clinic template using Svelte 5 with runes (`$props(
 ### Testing
 
 Two Vitest projects configured:
+
 - **client**: Browser tests for `.svelte.spec.ts` files using Playwright
 - **server**: Node tests for regular `.spec.ts` files
 
@@ -39,35 +40,43 @@ Tailwind 4 via `@tailwindcss/vite` plugin. Styles use slate/sky/emerald palette.
 # ✅ Operating Rules (Must Follow)
 
 ## 🎯 Mission
+
 Build a production-ready website with minimal complexity, strong UX hierarchy, and predictable iteration. Prefer shipping a clean MVP over speculative features.
 
 ## 🧭 Workflow (No Skipping Phases)
+
 - **Do not** jump ahead. Follow the agreed pipeline:
-  1) Outcome lock → 2) Design rules → 3) Architecture/tokens → 4) Sections → 5) Assembly → 6) QA → 7) Polish → 8) Production
+  1. Outcome lock → 2) Design rules → 3) Architecture/tokens → 4) Sections → 5) Assembly → 6) QA → 7) Polish → 8) Production
 - **One section at a time.** Never redesign other sections while building a new one.
 - **No scope creep.** New ideas go into a **V2 Parking Lot** at the end of your message.
 
 ## 🧱 Constraints > Creativity
+
 Before generating code, restate the constraints you’re following in 3–6 bullets.
 If a constraint conflicts with implementation, propose 2 options and label:
+
 - ✅ Recommended
 - ⚠️ Tradeoff
 
 ## 🛑 Gates (Definition of Done)
+
 Do not declare a phase “done” unless these pass:
 
 ### Build Gate ✅
+
 - Project builds successfully
 - No runtime console errors
 - Typecheck passes
 
 ### UI Gate ✅
+
 - Mobile + desktop look correct
 - Clear visual hierarchy (headline → support → CTA)
 - No obvious layout shifts / awkward wrapping
 - Focus states visible and keyboard navigation works
 
 ### Quality Gate ✅
+
 - Lint passes
 - Tests pass (if present)
 - Accessibility basics pass (labels, headings, contrast, aria only where needed)
@@ -75,11 +84,13 @@ Do not declare a phase “done” unless these pass:
 When finished, provide a short **Gate Checklist** with ✅/⚠️.
 
 ## 🧩 Architecture & Design Tokens (Lock Rules)
+
 - Keep tokens **minimal**: only what’s needed.
 - After tokens are locked, **do not introduce new tokens** unless absolutely necessary.
 - Do not over-abstract. Prefer simple components over “frameworky” patterns.
 
 ## 🧑‍💻 Coding Standards
+
 - TypeScript always (no `any` unless justified).
 - Prefer small, readable components with clear props.
 - Keep components **pure** (minimal side effects).
@@ -87,6 +98,7 @@ When finished, provide a short **Gate Checklist** with ✅/⚠️.
 - Avoid heavy dependencies unless there is clear benefit.
 
 ## ♿ Accessibility Minimums (Non-Negotiable)
+
 - Visible focus for interactive elements
 - Buttons/links are real `<button>` / `<a>`
 - Form inputs have labels
@@ -94,27 +106,32 @@ When finished, provide a short **Gate Checklist** with ✅/⚠️.
 - Color contrast: don’t ship low-contrast text
 
 ## ⚡ Performance Rules
+
 - Optimize images (use the framework’s image component if available)
 - Avoid large client bundles
 - No huge animations / expensive effects by default
 - Don’t add libraries for simple needs
 
 ## 🧪 Testing & QA (Playwright)
+
 If Playwright exists:
+
 - Add/maintain tests for:
   - Navigation
   - Primary CTA click path
   - Responsive checks (mobile viewport)
   - No console errors
-If tests fail, fix the app first — don’t “update snapshots” blindly.
+    If tests fail, fix the app first — don’t “update snapshots” blindly.
 
 ## 🔐 Secrets & Config Safety
+
 - Never hardcode secrets or API keys.
 - Use `.env.example` for required variables.
 - Don’t commit real `.env` files.
 - Only modify build/config files when necessary and explain why.
 
 ## 🧾 Git Hygiene
+
 - Make changes in small logical chunks.
 - Prefer clear commits:
   - `feat: add hero section`
@@ -122,14 +139,17 @@ If tests fail, fix the app first — don’t “update snapshots” blindly.
   - `test: add playwright CTA smoke test`
 
 ## 🗣️ Communication Format (Every Response)
+
 Use this structure:
-1) **What I’m doing**
-2) **Files changed** (paths)
-3) **Why this approach**
-4) **How to verify** (commands / steps)
-5) **V2 Parking Lot** (optional)
+
+1. **What I’m doing**
+2. **Files changed** (paths)
+3. **Why this approach**
+4. **How to verify** (commands / steps)
+5. **V2 Parking Lot** (optional)
 
 ## 🆘 If You’re Unsure
+
 - Don’t ask multiple questions. Ask **one** decisive question only if blocked.
 - Otherwise, make the best assumption and state it clearly as:
   - **Assumption:** ...
@@ -137,6 +157,7 @@ Use this structure:
   - **Mitigation:** ...
 
 ## 🧯 Don’t Do These
+
 - Don’t refactor unrelated code “while you’re here”
 - Don’t change design direction unless explicitly asked
 - Don’t introduce new libraries for minor problems

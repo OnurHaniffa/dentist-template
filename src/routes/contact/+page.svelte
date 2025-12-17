@@ -5,6 +5,7 @@
 	import Section from '$lib/components/Section.svelte';
 	import Button from '$lib/ui/Button.svelte';
 	import { site } from '$lib/content/site';
+	import SEO from '$lib/components/SEO.svelte';
 
 	// Scroll animation observer
 	$effect(() => {
@@ -56,13 +57,11 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Contact — Pearl Dental Studio</title>
-	<meta
-		name="description"
-		content="Contact our dental clinic in Istanbul. View opening hours, find directions, or request an appointment online."
-	/>
-</svelte:head>
+<SEO
+	title="Contact Us"
+	description="Contact Pearl Dental Studio in Kadıköy, Istanbul. Opening hours, directions, phone, email & appointment booking."
+	canonical="/contact"
+/>
 
 <PageShell>
 	<!-- Header Section -->
@@ -119,9 +118,7 @@
 				<div
 					class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-neutral-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
 				>
-					<div
-						class="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-sage-100 text-sage-600"
-					>
+					<div class="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-sage-100 text-sage-600">
 						<svg
 							class="h-6 w-6"
 							fill="none"
@@ -150,9 +147,7 @@
 				<div
 					class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-neutral-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
 				>
-					<div
-						class="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-sky-100 text-sky-600"
-					>
+					<div class="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-sky-100 text-sky-600">
 						<svg
 							class="h-6 w-6"
 							fill="none"
@@ -184,8 +179,18 @@
 						class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary-600 transition-colors hover:text-primary-700"
 					>
 						Get directions
-						<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+						<svg
+							class="h-4 w-4"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+							stroke-width="2"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+							/>
 						</svg>
 					</a>
 				</div>
@@ -206,7 +211,7 @@
 							loading="lazy"
 						></iframe>
 					</div>
-					<div class="flex items-center justify-between p-4 border-t border-neutral-100">
+					<div class="flex items-center justify-between border-t border-neutral-100 p-4">
 						<div>
 							<p class="text-sm font-medium text-neutral-900">Pearl Dental Studio</p>
 							<p class="text-xs text-neutral-500">Kadıköy, Istanbul</p>
@@ -217,9 +222,23 @@
 							rel="noreferrer"
 							class="inline-flex items-center gap-1.5 rounded-full bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
 						>
-							<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-								<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+							<svg
+								class="h-4 w-4"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+								stroke-width="2"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+								/>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+								/>
 							</svg>
 							Get directions
 						</a>
@@ -259,8 +278,10 @@
 	<!-- Quick Contact Form -->
 	<Section tone="muted" spacing="default" class="scroll-fade-in">
 		<div class="mx-auto max-w-2xl">
-			<div class="text-center mb-8">
-				<p class="mb-2 text-sm font-medium uppercase tracking-wider text-primary-600">Send a Message</p>
+			<div class="mb-8 text-center">
+				<p class="mb-2 text-sm font-medium tracking-wider text-primary-600 uppercase">
+					Send a Message
+				</p>
 				<h2 class="font-display text-2xl tracking-tight text-neutral-900 sm:text-3xl">
 					Have a question?
 				</h2>
@@ -277,8 +298,18 @@
 					<div
 						class="mb-6 flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700"
 					>
-						<svg class="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+						<svg
+							class="h-5 w-5 shrink-0"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+							stroke-width="2"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+							/>
 						</svg>
 						{contactError}
 					</div>
@@ -286,10 +317,20 @@
 
 				{#if contactSuccess}
 					<div
-						class="mb-6 flex items-start gap-3 rounded-xl border border-sage-200 bg-sage-50 p-4 text-sm text-sage-800"
+						class="text-sage-800 mb-6 flex items-start gap-3 rounded-xl border border-sage-200 bg-sage-50 p-4 text-sm"
 					>
-						<svg class="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+						<svg
+							class="h-5 w-5 shrink-0"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+							stroke-width="2"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+							/>
 						</svg>
 						<div>
 							<strong>Message sent!</strong> We'll get back to you shortly.
@@ -305,7 +346,7 @@
 						<input
 							id="contact-name"
 							type="text"
-							class="h-12 rounded-xl border border-neutral-200 bg-white px-4 text-sm outline-none transition-all focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+							class="h-12 rounded-xl border border-neutral-200 bg-white px-4 text-sm transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
 							placeholder="John Doe"
 							bind:value={contactName}
 							disabled={contactSuccess}
@@ -319,7 +360,7 @@
 						<input
 							id="contact-email"
 							type="email"
-							class="h-12 rounded-xl border border-neutral-200 bg-white px-4 text-sm outline-none transition-all focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+							class="h-12 rounded-xl border border-neutral-200 bg-white px-4 text-sm transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
 							placeholder="you@example.com"
 							bind:value={contactEmail}
 							disabled={contactSuccess}
@@ -332,15 +373,21 @@
 						</label>
 						<textarea
 							id="contact-message"
-							class="min-h-32 rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+							class="min-h-32 rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm transition-all outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
 							placeholder="How can we help you?"
 							bind:value={contactMessage}
 							disabled={contactSuccess}
 						></textarea>
 					</div>
 
-					<div class="sm:col-span-2 flex flex-wrap items-center gap-3 pt-2">
-						<Button type="submit" variant="primary" size="lg" loading={contactLoading} disabled={contactSuccess || contactLoading}>
+					<div class="flex flex-wrap items-center gap-3 pt-2 sm:col-span-2">
+						<Button
+							type="submit"
+							variant="primary"
+							size="lg"
+							loading={contactLoading}
+							disabled={contactSuccess || contactLoading}
+						>
 							{contactSuccess ? 'Message sent' : 'Send message'}
 						</Button>
 						<span class="text-sm text-neutral-500">or</span>
@@ -377,7 +424,8 @@
 				<div>
 					<h3 class="text-lg font-semibold text-neutral-900">Need urgent help?</h3>
 					<p class="mt-1 text-neutral-600">
-						For dental emergencies, call us directly. We prioritize same-day appointments when possible.
+						For dental emergencies, call us directly. We prioritize same-day appointments when
+						possible.
 					</p>
 				</div>
 			</div>
@@ -394,8 +442,11 @@
 			<img
 				src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&h=600&fit=crop&q=80"
 				alt=""
+				width="1600"
+				height="600"
 				class="h-full w-full object-cover"
 				loading="lazy"
+				decoding="async"
 			/>
 			<div class="absolute inset-0 bg-neutral-900/80"></div>
 		</div>
