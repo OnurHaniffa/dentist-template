@@ -1,38 +1,31 @@
-# sv
+# Pearl Dental Studio — Dental Clinic Website Template
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+> **Live Demo:** [dentist-template-seven.vercel.app](https://dentist-template-seven.vercel.app)
 
-## Creating a project
+A production-ready dental clinic website template with 7 fully designed pages, built for performance, accessibility, and SEO.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Features
 
-```sh
-# create a new project in the current directory
-npx sv create
+- **7 Pages:** Homepage, Services, Pricing, Team Profiles, Patient Reviews, Contact, and Booking Form
+- **Accessibility:** WCAG AA compliant — skip links, semantic HTML, ARIA roles, keyboard navigation, focus indicators
+- **SEO:** JSON-LD Dentist schema (services, hours, coordinates), Open Graph metadata, semantic headings
+- **Animations:** View Transitions API with graceful degradation for unsupported browsers
+- **Responsive:** Fully responsive across mobile, tablet, and desktop
 
-# create a new project in my-app
-npx sv create my-app
-```
+## Tech Stack
 
-## Developing
+- **Framework:** SvelteKit 2, Svelte 5 (runes API)
+- **Language:** TypeScript (strict mode)
+- **Styling:** Tailwind CSS 4
+- **Deployment:** Vercel
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Getting Started
 
-```sh
+```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+## Built By
 
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+**Onur Haniffa** — [onurhaniffa.com](https://onurhaniffa.com) · [LinkedIn](https://linkedin.com/in/onurhaniffa) · [GitHub](https://github.com/OnurHaniffa)
